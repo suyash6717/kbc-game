@@ -1,42 +1,51 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+.pyramid-container {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 250px; /* Adjust width as necessary */
+  max-height: 100vh; /* Set max height to the full viewport */
+  overflow-y: auto; /* Enable vertical scrolling if needed */
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0;
+  background-color: #111;
+  box-shadow: -5px 0 10px rgba(0, 0, 0, 0.2);
+  border-left: 2px solid #333;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.pyramid-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.pyramid-item {
+  background-color: #222;
+  color: white;
+  padding: 11px 12px;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: right;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+  border-bottom: 1px solid #444;
+  display: flex;          
+  justify-content: center; 
+  align-items: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.pyramid-item:last-child {
+  border-bottom: none;
 }
 
-.card {
-  padding: 2em;
+.pyramid-item.active {
+  background-color: gold;
+  color: black;
 }
 
-.read-the-docs {
-  color: #888;
+.pyramid-item:hover {
+  background-color: gold;
 }
