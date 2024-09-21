@@ -1,15 +1,10 @@
 import { useEffect, useState } from "react";
-
+import questions from "../questions";
 const QuestionAnswer = () => {
-    const question = "What is the capital of France?";
-    const options = [
-        { id: 1, text: "Berlin" },
-        { id: 2, text: "Madrid" },
-        { id: 3, text: "Paris" },
-        { id: 4, text: "Rome" },
-    ];
+
     const [timerValue,setTimerValue] = useState(20);
     const [intervalId,setIntervalId] = useState(null);
+    const [currentIndex,setCurrentIndex] = useState(0);
 
     useEffect(()=>{
         const id = setInterval(()=>{
@@ -37,17 +32,15 @@ const QuestionAnswer = () => {
                 <div className="timer-circle">
                     <span className="timer-text">{timerValue}</span>
                 </div>
-
-                <h2 className="question-text">{question}</h2>
+                <h2 className="question-text">{questions[currentIndex].question}</h2>
                 <div className="options-container">
-                    {options.map((option) => (
-                        <div key={option.id} className="option">
-                            {option.text}
+                    {questions[currentIndex].options.map((option) => (
+                        <div key={option} className="option">
+                            {option}
                         </div>
                     ))}
                 </div>
             </div>
-
         </>
     )
 }

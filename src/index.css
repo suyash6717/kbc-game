@@ -5,7 +5,7 @@ html, body {
 }
 
 body {
-  background-image: url(https://i.pinimg.com/736x/ab/10/a9/ab10a9d16c53c41ef7def5c77186c58d.jpg);
+  background-image: url('/background.jpg');
   background-size: cover; 
   background-repeat: no-repeat; 
   background-position: center;
