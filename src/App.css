@@ -49,3 +49,77 @@
 .pyramid-item:hover {
   background-color: gold;
 }
+
+/* css for question and answer block  */
+/* Main container */
+.quiz-container {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 60%; /* Adjust width to fit comfortably */
+  padding: 10px;
+  background-color: #282c34;
+  color: white;
+  box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.3);
+  border-radius: 12px 12px 0 0; /* Rounded top corners */
+  max-height: 90vh; /* Ensure the quiz container fits within the viewport */
+  margin-bottom: 25px;
+}
+
+/* Timer circle */
+.timer-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: gold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  font-weight: bold;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.timer-text {
+  font-size: 27px;
+  color: #333;
+}
+
+/* Question */
+.question-text {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* Options container (2 rows and 2 columns layout) */
+.options-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 2 columns */
+  grid-gap: 15px;
+  width: 100%;
+  max-width: 400px;
+}
+
+/* Option styling with < > shape */
+.option {
+  background-color: #333;
+  padding: 15px;
+  text-align: center;
+  font-size: 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  clip-path: polygon(10% 0, 90% 0, 100% 50%, 90% 100%, 10% 100%, 0 50%); /* Trapezoid shape */
+}
+
+/* Hover effect for options */
+.option:hover {
+  background-color: gold;
+  color: black;
+}
+
