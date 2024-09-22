@@ -4,17 +4,17 @@ export const currentIndexSlice = createSlice({
     name:'currentIndex',
     initialState:{
         value: 0,
-        isGameOver: false,
+        prizeAmount: 0,
     },
     reducers:{
         setIndex: (state,action) => {
             state.value = action.payload;
         },
-        setGameStatus: (state,action) => {
-            state.isGameOver = action.payload;
-        },
+        setAmount: (state,action) => {
+            state.prizeAmount = action.payload;
+        }
     }
 })
 
-export const { setIndex, setGameStatus } = currentIndexSlice.actions;
+export const { setIndex, setAmount } = currentIndexSlice.actions;
 export default currentIndexSlice.reducer;

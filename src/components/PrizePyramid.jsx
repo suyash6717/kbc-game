@@ -1,4 +1,7 @@
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { setAmount } from "../slice/currentIndexSlice";
+import { useEffect } from "react";
+
 const PrizePyramid = () => {
     // List of prizes
     const prizeList = [
@@ -18,8 +21,18 @@ const PrizePyramid = () => {
         "₹3,000",
         "₹2,000",
     ];
+    const dispatch = useDispatch();
     const currentIndex = useSelector((state) => state.currentIndex.value);
-    const index = (prizeList.length - currentIndex -1)
+    const index = (prizeList.length - currentIndex - 1);
+    useEffect(() => {
+        if(currentIndex+1 == 15 ){
+            dispatch(setAmount(prizeList[0]));
+        }
+        else if(prizeList[index + 1]){
+            dispatch(setAmount(prizeList[index + 1] ?? 0));
+        }
+    }, [index])
+
     return (
         <div className="pyramid-container">
             <ul className="pyramid-list">
@@ -27,7 +40,7 @@ const PrizePyramid = () => {
                     <li
                         key={prizeIndex}
                         className={`pyramid-item ${index === prizeIndex ? "active" : ""}`}
-                        onClick={() => setActiveIndex(prizeIndex)}
+                        onClick={() => handlePrize(prizeIndex, prize)}
                     >
                         {prize}
                     </li>
