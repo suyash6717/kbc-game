@@ -123,3 +123,94 @@
   color: black;
 }
 
+.option.correct {
+  background-color: green;
+  animation: none; /* Stop blinking after it's green */
+}
+
+.option.wrong {
+  background-color: red;
+  animation: none; /* Stop blinking after it's red */
+}
+
+.blink-gold {
+  animation: blink-gold-animation 0.75s steps(5, start) 2; 
+  background-color: gold;
+}
+
+.winning-container {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.winning-message {
+  font-size: 36px;
+  color: green;
+  margin-bottom: 20px;
+}
+
+.restart-btn {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.restart-btn:hover {
+  background-color: #0056b3;
+}
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7); /* Dark background with transparency */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure it's above other content */
+}
+
+.popup-content {
+  min-width: 300px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.winning-message {
+  font-size: 36px;
+  color: green;
+  margin-bottom: 20px;
+}
+
+.restart-btn,
+.close-btn {
+  padding: 10px 20px;
+  background-color: gold;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  margin: 5px;
+}
+
+.restart-btn:hover,
+.close-btn:hover {
+  background-color: rgb(8, 8, 8);
+}
+
+
+@keyframes blink-gold-animation {
+  50% {
+      visibility: hidden;
+  }
+}

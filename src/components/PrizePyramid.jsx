@@ -1,5 +1,4 @@
-import { useState } from "react";
-
+import { useSelector } from "react-redux";
 const PrizePyramid = () => {
     // List of prizes
     const prizeList = [
@@ -19,15 +18,15 @@ const PrizePyramid = () => {
         "₹3,000",
         "₹2,000",
     ];
-    const [activeIndex, setActiveIndex] = useState(0);
-
+    const currentIndex = useSelector((state) => state.currentIndex.value);
+    const index = (prizeList.length - currentIndex -1)
     return (
         <div className="pyramid-container">
             <ul className="pyramid-list">
                 {prizeList.map((prize, prizeIndex) => (
                     <li
                         key={prizeIndex}
-                        className={`pyramid-item ${activeIndex === prizeIndex ? "active" : ""}`}
+                        className={`pyramid-item ${index === prizeIndex ? "active" : ""}`}
                         onClick={() => setActiveIndex(prizeIndex)}
                     >
                         {prize}
