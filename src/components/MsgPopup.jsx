@@ -9,7 +9,7 @@ const MsgPopup = ({ handleRestart }) => {
             </div>
             {/* Celebration Effects */}
             {
-                prizeAmount == '₹7,00,00,000' &&
+                prizeAmount == '7,00,00,000' &&
                 (
                     <>
                         <div className="balloons">
